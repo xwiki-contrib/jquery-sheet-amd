@@ -1,7 +1,7 @@
 # jquery.sheet AMD
 Using Asynchronous Module Definition to include jquery.sheet in your project.
 
-    This is not complete, it's still in a proof of consept stage, tinkering will be needed.
+    This is not complete, it's still in a proof of concept stage, tinkering will be needed.
 
 ## How to include it.
 
