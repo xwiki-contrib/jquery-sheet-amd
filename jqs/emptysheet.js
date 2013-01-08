@@ -2,7 +2,8 @@ define({"sheet": [
   {
     "metadata": {
       "columns": 6,
-      "rows": 15,"title": "Spreadsheet 1",
+      "rows": 15,
+      "title": "Spreadsheet 1",
       "col_widths": {
         "c0": "120",
         "c1": "120",

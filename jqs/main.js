@@ -4,6 +4,7 @@ define(["module"], function(module) {
             var modulePath = module.id.substr(0, module.id.lastIndexOf('/'))
             var ifr = document.createElement("iframe");
             ifr.setAttribute("src", "JavaScript:''");
+            ifr.setAttribute("allowtransparency", "true"); // IE
             config.jqs_amd.id = config.jqs_amd.id || "jquerysheet-" + Math.random().toString().replace('0.', '');
             ifr.setAttribute("id", config.jqs_amd.id);
             domLocation.appendChild(ifr);

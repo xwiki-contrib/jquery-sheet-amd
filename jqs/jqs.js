@@ -94,9 +94,8 @@ define(["jquery", "require"], function($, require) {
     var out = {
         inject: function(domLocation, config, andThen) {
             var conf = $.extend({
-                width: 750,
-                height: 375,
-                id: "jquerysheet-" + Math.random().toString().replace('0.', ''),
+                id: "jquerysheet-div",
+                style: '',
                 jquerySheet: true,
                 jquerySheetCss: true,
                 parser: true,
@@ -118,16 +117,13 @@ define(["jquery", "require"], function($, require) {
                 urlGet: require.toUrl(PREFIX + "sheets/enduser.documentation.html"),
             }, config);
 
-            conf.width = typeof(conf.width) === 'string' ? conf.width : (conf.width + 'px');
-            conf.height = typeof(conf.height) === 'string' ? conf.height : (conf.height + 'px');
-
             var needJs = getDependencies(DEPENDENCIES, conf);
             needJs.unshift("jquery");
 
             require([PREFIX + "jquery.sheet"], function() {
                 require(needJs, function ($, sheet) {
                     $(domLocation).first().append(
-                        "<div id='" + conf.id + "' style='width:90%;height:90%'></div>");
+                        "<div id='" + conf.id + "' style='" + conf.style + "'></div>");
                     $.each(getDependencies(CSS_DEPENDENCIES, conf), function(index, value) {
                         addStyle(value, $('head'));
                     });
