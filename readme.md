@@ -3,9 +3,13 @@ Using Asynchronous Module Definition to include jquery.sheet in your project.
 
     This is not complete, it's still in a proof of concept stage, tinkering will be needed.
 
+Type `./do` and the scripts will be linted and grouped into a common zip file.
+
 ## How to include it.
 
 This is it, get a checkout and try opening example.html for yourself.
+
+**NOTE:** You will need to copy jquery in to the jqs directory or provide a different path.
 
     <html>
     <head>
