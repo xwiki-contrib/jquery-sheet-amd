@@ -1,14 +1,18 @@
-define(["module"], function(module) {
+/*jshint scripturl: true */
+/* JavaScript:'' is recommended for use with iframes. */
+/*globals document:true */
+'use strict';
+define(["module"], function (module) {
     return {
-        inject: function(domLocation, config, andThen) {
-            var modulePath = module.id.substr(0, module.id.lastIndexOf('/'))
+        inject: function (domLocation, config, andThen) {
+            var modulePath = module.id.substr(0, module.id.lastIndexOf('/'));
             var ifr = document.createElement("iframe");
             ifr.setAttribute("src", "JavaScript:''");
             ifr.setAttribute("allowtransparency", "true"); // IE
             config.jqs_amd.id = config.jqs_amd.id || "jquerysheet-" + Math.random().toString().replace('0.', '');
             ifr.setAttribute("id", config.jqs_amd.id);
             domLocation.appendChild(ifr);
-            require([modulePath + "/iframe!" + modulePath + "/jqs@" + config.jqs_amd.id], function(jqs) {
+            require([modulePath + "/iframe!" + modulePath + "/jqs@" + config.jqs_amd.id], function (jqs) {
                 jqs.inject(ifr.contentWindow.document.body, config, andThen);
             });
         }
